@@ -1,0 +1,4 @@
+<image class="topimg" src="../../images/top.svg"></image>
+<view class="title">巡检登记系统</view>
+<view class="tips">巡检登记系统将获取您的定位并进行打卡</view>
+<button class="mainbtn" bindtap="tomap">微信登陆</button>

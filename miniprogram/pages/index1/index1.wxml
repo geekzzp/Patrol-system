@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<view class="personalWrap">
+    <view class="personalMe" >
+        <image src="{{userHead}}" style="width:136rpx;height:136rpx;border:2rpx solid #ddd;float:left;margin:20rpx 20rpx;border-radius: 50%;"></image>
+        <view class="personalInfo">
+            <text class="iconfont">姓名: {{userName}}</text>
+            <text class="iconfont">学号: {{userNum}}</text>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <view class="personalList">
+        <!-- <view class="iconfont" bindtap="setin" open-type="getUserInfo" bindgetuserinfo="getUserInfo">实名认证</view> -->
+        <view class="iconfont" bindtap="listFirst">社团申报</view>
+        <view class="iconfont" bindtap="office">社团职务申报</view>
+        <view class="iconfont" bindtap="result">个人申报结果</view>
+        <view class="iconfont" bindtap="common">社长后台</view>
+        <view class="iconfont" bindtap="help">帮助&关于我们</view>
+    </view>
+    <view style="height:40rpx;"></view>
+    <button type="default"  bindtap="defaultLogin" data-login="{{login}}" hover-class="other-button-hover" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> {{operation}} </button>
+</view>

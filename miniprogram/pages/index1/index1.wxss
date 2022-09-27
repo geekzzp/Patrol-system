@@ -1,0 +1,70 @@
+.page{
+  /*background-color:#fff;*/
+  font-size:30rpx;
+}
+.personalWrap{
+  margin:30rpx 30rpx 0rpx 30rpx;
+}
+.personalMe{
+  height:200rpx;
+  margin:30rpx 0rpx 30rpx 0rpx;
+  background-color: #fff;
+}
+.personalInfo{
+  float:left;
+  margin: 20rpx 0rpx 0rpx 20rpx;
+  display: block;
+  line-height:70rpx;
+  height:70rpx;
+}
+.personalInfo wx-text{
+  display: block;
+  line-height:70rpx;
+  height:70rpx;
+}
+.personalList{
+  background-color: #fff;
+  padding:0rpx 20rpx;
+}
+.personalList view{
+  display: block;
+  line-height:90rpx;
+  height:90rpx;
+  border-bottom:1px solid #ddd;
+}
+.personalList wx-span{
+  float:right;
+  font-size:40rpx;
+  margin-top:-63rpx;
+  color:#ddd;
+}
+.personalList view{
+  position:relative;
+}
+.iconfont{
+  font-size:32rpx;
+}
+.personalList view:before{
+  color:#b02923;
+  font-size:40rpx !important;
+  font-weight:bold;
+  padding-right: 10rpx;
+  text-align:center;
+  vertical-align:top;
+}
+.personalList view:after{
+  content:'';
+  height:30rpx;
+  width:30rpx;
+  display:block;
+  border:1px solid #ccc;
+  border-left-width:0;
+  border-bottom-width:0;
+  position:absolute;
+  top:30rpx;
+  right:12rpx;
+}
+
+.text{
+  padding:0rpx 20rpx;
+}
