@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/test"
+    "pages/manager/manager",
+    "pages/worker/worker"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
