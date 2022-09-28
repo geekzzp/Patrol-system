@@ -1,0 +1,1 @@
+<button bindtap="sign">打卡</button>

@@ -1,7 +1,10 @@
-const app = getApp()
+
 Page({
+  data: {
+    self: ""
+  },
   tomap () {
-    
+    console.log('按钮被按下了');
     wx.getUserProfile({
       
       desc: '',
@@ -10,25 +13,26 @@ Page({
 
         db.collection('managers').get({
           success: function(managers) {
-            if (res.cloudID in managers)
-              wx.navigateTo({
-                url: '../manager/manager'
-              })
-              else return;
+            console.log(managers)
           }
         })
 
         db.collection('workers').get({
           success: function(workers) {
-            if (res.cloudID in workers)
-              wx.navigateTo({
-                url: '../worker/worker'
-              })
-              else return;
+            console.log(workers)
           }
         })
       }
     })
+
+    if (self == "manager")
+      wx.navigateTo({
+        url: '../manager/manager',
+      })
+      else if (self == "worker")
+        wx.navigateTo({
+          url: '../worker/worker',
+        })
   },
   onShareAppMessage () {
     return {

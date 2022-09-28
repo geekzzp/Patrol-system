@@ -1,7 +1,9 @@
-function sign(){
+Page({
+  data: {},
+  sign() {
     var adapter = wx.getNFCAdapter();
     adapter.startDiscovery(null, (code) => {
-      switch(code) {
+      switch (code) {
         case 13000:
           alert("设备不支持NFC！"); break;
         case 13001:
@@ -23,4 +25,5 @@ function sign(){
         }
       })
     })
-}
+  }
+})
