@@ -1,0 +1,14 @@
+.mainbtn{
+  margin-top: 72rpx;
+  height: 96rpx;
+  width: 100% !important;
+  line-height: 96rpx;
+  border-radius: 8rpx;
+  font-size: 34rpx;
+  padding: 0;
+  color: #FFFFFF;
+  background: #07C160;
+}
+.mainbtn:active{
+  background: var(--zb-color);
+}

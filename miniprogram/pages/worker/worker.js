@@ -1,5 +1,12 @@
+// pages/index2/index2.js
 Page({
-  data: {},
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
   sign() {
     var adapter = wx.getNFCAdapter();
     adapter.startDiscovery(null, (code) => {

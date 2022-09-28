@@ -1,30 +1,30 @@
+// pages/index1/index1.js
+Page({
 
-function get_by_date(date) {
-  const db = wx.cloud.database();
-  db.collection('records').where({
-                    //如何判断日期？？？
-  }).get({
-    success: (res) => {
-      return res
-    }
-  })
-}
+  /**
+   * 页面的初始数据
+   */
+  data: {
 
-
-function get_by_person(person) {
-  const db = wx.cloud.database();
-  db.collection('workers').where({
-    name: person
-  }).get({
-    success: (res) => {
-      db.collection('records').where({
-        worker: res[0]
-      }).get({
-        success: (records) => {
-          return records;
-        }
-      })
-    }
-  });
-
-}
+  },
+  tomanager1(){
+    wx.navigateTo({
+      url: '../manager1/manager1'
+    })
+  },
+  tomanager2(){
+    wx.navigateTo({
+      url: '../manager2/manager2'
+    })
+  },
+  tomanager3(){
+    wx.navigateTo({
+      url: '../manager3/manager3'
+    })
+  },
+  tomanager4(){
+    wx.navigateTo({
+      url: '../manager4/manager4'
+    })
+  }
+})

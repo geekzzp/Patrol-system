@@ -1,5 +1,5 @@
 <!--pages/test/test.wxml-->
 <view class="topimg"></view>
 <view class="title">您的身份</view>
-<button class="mainbtn">我是巡检员</button>
-<button class="secbtn">我是管理员</button>
+<button class="mainbtn" bindtap="toworker">我是巡检员</button>
+<button class="secbtn" bindtap="tosignin">我是管理员</button>

@@ -1,0 +1,3 @@
+<!--pages/manager3/manager3.wxml-->
+<button class="mainbtn" bindtap="get_by_date">get_by_date</button>
+<button class="mainbtn" bindtap="get_by_person">get_by_person</button>

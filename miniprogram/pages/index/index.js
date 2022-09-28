@@ -1,43 +1,58 @@
-
+const app = getApp()
 Page({
   data: {
-    self: ""
+    self: "1"
+  },
+  onLoad() {
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true
+      })
+    }
   },
   tomap () {
-    console.log('按钮被按下了');
+    
     wx.getUserProfile({
-      
-      desc: '',
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        const db = wx.cloud.database()
-
-        db.collection('managers').get({
-          success: function(managers) {
-            console.log(managers)
-          }
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true,
         })
+        
+        // const db = wx.cloud.database()
 
-        db.collection('workers').get({
-          success: function(workers) {
-            console.log(workers)
-          }
+        // db.collection('managers').get({
+        //   success: function(managers) {
+        //     console.log(managers)
+        //   }
+        // })
+
+        // db.collection('workers').get({
+        //   success: function(workers) {
+        //     console.log(workers)
+        //   }
+        // })
+        console.log(res)
+        if (this.data.self=="1")
+        wx.navigateTo({
+          url: '../test/test'
+        })
+        else if (this.data.self == "manager")
+        wx.navigateTo({
+          url: '../manager/manager'
+        })
+        else if (this.data.self == "worker")
+        wx.navigateTo({
+          url: '../worker/worker'
         })
       }
     })
-
-    if (self == "manager")
-      wx.navigateTo({
-        url: '../manager/manager',
-      })
-      else if (self == "worker")
-        wx.navigateTo({
-          url: '../worker/worker',
-        })
   },
   onShareAppMessage () {
     return {
-      title: '快来使用LBS定位小工具',
-      imageUrl: '../../asset/logo.png'
+      title: '快来使用巡检登记小工具',
+      imageUrl: '../../images/top.svg'
     }
   }
 })
