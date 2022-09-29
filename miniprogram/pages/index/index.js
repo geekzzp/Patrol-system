@@ -5,6 +5,7 @@ Page({
 
   get_token() {
 
+    return '61_-3-JFvUE4BWd2RTDM0EysOtVH_UsMvxVPNolcLdUOb7erhuOuldeXIy7AcE';
   },
 
   tomap() {
@@ -31,10 +32,6 @@ Page({
             url: '../worker/worker?name=' + res.data[0].name,
           })
       }
-    })
-
-    wx.navigateTo({
-      url: '../worker/worker?openid=' + openid,
     })
   }
 })
