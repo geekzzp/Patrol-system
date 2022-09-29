@@ -1,58 +1,41 @@
-const app = getApp()
+
 Page({
   data: {
-    self: "1"
   },
-  onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+
+  get_token() {
+
+    return '61_-dUOb7erhuOuldeXIy7AcE';
   },
-  tomap () {
-    
-    wx.getUserProfile({
-      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+
+  tomap() {
+    const openid = this.get_token();
+
+    const db = wx.cloud.database()
+    db.collection('managers').where({
+      wxid: openid
+    }).get({
       success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true,
-        })
-        
-        // const db = wx.cloud.database()
+        if (res)
+          wx.navigateTo({
+            url: '../manager/manager',
+          })
+      }
+    });
 
-        // db.collection('managers').get({
-        //   success: function(managers) {
-        //     console.log(managers)
-        //   }
-        // })
-
-        // db.collection('workers').get({
-        //   success: function(workers) {
-        //     console.log(workers)
-        //   }
-        // })
-        console.log(res)
-        if (this.data.self=="1")
-        wx.navigateTo({
-          url: '../test/test'
-        })
-        else if (this.data.self == "manager")
-        wx.navigateTo({
-          url: '../manager/manager'
-        })
-        else if (this.data.self == "worker")
-        wx.navigateTo({
-          url: '../worker/worker'
-        })
+    db.collection('workers').where({
+      wxid: openid
+    }).get({
+      success: (res) => {
+        if (res)
+          wx.navigateTo({
+            url: '../worker/worker?name=' + res.data[0].name,
+          })
       }
     })
-  },
-  onShareAppMessage () {
-    return {
-      title: '快来使用巡检登记小工具',
-      imageUrl: '../../images/top.svg'
-    }
+
+    wx.navigateTo({
+      url: '../worker/worker?openid=' + openid,
+    })
   }
 })

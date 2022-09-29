@@ -5,8 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userName: "",
+    userHead: ""
   },
+
+  onLoad(option) {
+    console.log(option)
+    this.userName = option.name
+  },
+
   tomanager1(){
     wx.navigateTo({
       url: '../manager1/manager1'
