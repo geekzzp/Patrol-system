@@ -5,7 +5,6 @@ Page({
 
   get_token() {
 
-    return '61_-dUOb7erhuOuldeXIy7AcE';
   },
 
   tomap() {
