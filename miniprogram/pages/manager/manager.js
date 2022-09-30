@@ -6,12 +6,23 @@ Page({
    */
   data: {
     userName: "",
-    userHead: ""
+    userNum: ""
   },
 
   onLoad(option) {
-    console.log(option)
-    this.userName = option.name
+    const db = wx.cloud.database()
+    const openid = wx.getStorageSync("openid")
+    db.collection('managers').where({
+      wxid: openid
+    }).get({
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          userName: res.data[0].name,
+          userNum: res.data[0].number,
+        })
+      }
+    });
   },
 
   tomanager1(){

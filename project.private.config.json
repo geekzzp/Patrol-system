@@ -9,6 +9,13 @@
           "name": "db guide",
           "pathName": "pages/databaseGuide/databaseGuide",
           "query": ""
+        },
+        {
+          "name": "",
+          "pathName": "pages/test/test",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

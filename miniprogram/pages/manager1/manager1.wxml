@@ -1,2 +1,15 @@
 <!--pages/manager1/manager1.wxml-->
-<view wx:for="{{workers}}"> {{workers}} </view>
+<view class=".text_1">人员列表</view>
+<checkbox-group bindchange="checkboxChange">
+<view wx:for="{{workers}}" class="van-card" wx:key="uniquedet">
+	<view class="">
+		<view class="van-card__thumb" bindtap="">
+			<image src="{{item.head}}" class="van-card__img" style="width:136rpx;height:136rpx;border:1px solid #ddd;float:left;margin:20rpx 20rpx;border-radius: 50%;"></image>
+		  <view class="van-card__content">
+		  	<view class="van-card__title">{{item.name}}</view>
+		  	<view class="van-card__desc">{{item.number}}</view>
+	  	</view>
+		</view>
+	</view>
+</view>
+</checkbox-group>
