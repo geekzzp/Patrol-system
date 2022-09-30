@@ -1,3 +1,14 @@
-<!--pages/manager3/manager3.wxml-->
-<button class="mainbtn" bindtap="get_by_date">get_by_date</button>
-<button class="mainbtn" bindtap="get_by_person">get_by_person</button>
+<!--pages/manager1/manager1.wxml-->
+<view class=".text_1">记录列表</view>
+<checkbox-group bindchange="checkboxChange">
+<view wx:for="{{records}}" class="van-card" wx:key="uniquedet">
+	<view class="">
+		<view class="van-card__thumb" bindtap="">
+		  <view class="van-card__content">
+		  	<view class="van-card__title">{{item.location}}</view>
+		  	<view class="van-card__desc">{{item.name}} 时间：{{item.time}}</view>
+	  	</view>
+		</view>
+	</view>
+</view>
+</checkbox-group>

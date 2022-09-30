@@ -5,34 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tag: null,
-    name: ''
+    userName: ''
   },
 
   onLoad(option) {
-    this.setData({
-      name: option
+    const db = wx.cloud.database()
+    db.collection('workers').where({
+      wxid: wx.getStorageSync('openid')
+    }).get({
+      success: (res) => {
+        this.setData({userName: res.data[0].name})
+      }
     })
-  },
 
-  sign() {
-    const adapter = wx.getNFCAdapter();
-    console.log(adapter)
+
+    const adapter = wx.getNFCAdapter()
     adapter.startDiscovery();
     adapter.onDiscovered((result) => {
-      result.messages.messages.forEach(console.log)
-      const device = adapter.getNdef();
-      device.connect();
-      if (device.isConnected()) {
-        device.onNdefMessage((res) => {
-          const db = wx.cloud.database();
-          db.collection('records').add({
-            name: this.name,
-            time: new Date(),
-            rfid: res.data
-          })
-        });
-      };
+      const device = adapter.getMifareClassic()
+      console.log("device");
+      device.connect({
+        success: () => {
+          console.log(device.getMaxTransceiveLength())
+        },
+        fail: () => {
+          console.log("failed");
+        },
+        complete: () => {
+          console.log(device)
+        }
+      })
     })
   }
 })

@@ -13,7 +13,7 @@
         <view class="iconfont" bindtap="tomanager1">管理员工</view>
         <view class="iconfont" bindtap="tomanager2">管理芯片</view>
         <view class="iconfont" bindtap="tomanager3">查看打卡情况</view>
-        <view class="iconfont" bindtap="tomanager4">解除工作绑定</view>
+        <!-- <view class="iconfont" bindtap="tomanager4">解除工作绑定</view> -->
     </view>
     <view style="height:40rpx;"></view>
 </view>

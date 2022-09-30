@@ -15,7 +15,8 @@ Page({
     const db = wx.cloud.database()
     db.collection("workers").get({
       success: (res) => {
-        this.setData({workers: res.data});
+        this.setData({workers: res.data})
+        console.log(res.data)
       }
     })
   }

@@ -1,1 +1,60 @@
-/* pages/manager2/manager2.wxss */
+
+.text_1{
+  display: flex;
+  justify-content: center;
+  font-size: 45rpx;
+  line-height:100rpx;
+}
+.van-card {
+  position: relative;
+  box-sizing: border-box;
+  padding: 16rpx 32rpx;
+  padding: var(--card-padding, 0 16px);
+  font-size: 24rpx;
+  font-size: var(--card-font-size, 24rpx);
+  color: #323233;
+  color: var(--card-text-color, #323233);
+  background-color: #fafafa;
+  background-color: var(--card-background-color, #fafafa)
+}
+
+.van-card__thumb {
+  position: relative;
+  height: 190rpx;
+}
+
+.van-card__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+  border-radius: var(--border-radius-lg, 16rpx)
+}
+
+.van-card__content {
+  float:left;
+  margin: 20rpx 0rpx 0rpx 20rpx;
+  display: block;
+  line-height:70rpx;
+  height:70rpx;
+}
+
+.van-card__title {
+  font-size: 30rpx;
+  font-weight: 700;
+  display: block;
+  line-height:70rpx;
+  height:70rpx;
+}
+
+.van-card__desc {
+  line-height: 40rpx;
+  line-height: var(--card-desc-line-height, 40rpx);
+  color: #646566;
+  color: var(--card-desc-color, #646566)
+}
+
+.van-card__tag {
+  position: absolute;
+  top: 4rpx;
+  left: 0
+}

@@ -1,2 +1,14 @@
-<!--pages/manager2/manager2.wxml-->
-<text>pages/manager2/manager2.wxml</text>
+<!--pages/manager1/manager1.wxml-->
+<view class=".text_1">芯片列表</view>
+<checkbox-group bindchange="checkboxChange">
+<view wx:for="{{chip}}" class="van-card" wx:key="uniquedet">
+	<view class="">
+		<view class="van-card__thumb" bindtap="">
+		  <view class="van-card__content">
+		  	<view class="van-card__title">{{item.location}}</view>
+		  	<view class="van-card__desc">{{item.rfid}}</view>
+	  	</view>
+		</view>
+	</view>
+</view>
+</checkbox-group>
